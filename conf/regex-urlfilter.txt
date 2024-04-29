@@ -27,11 +27,11 @@
 -^(?:file|ftp|mailto):
 
 # skip URLs longer than 2048 characters, see also db.max.outlink.length
-#-^.{2049,}
+-^.{2049,}
 
 # skip image and other suffixes we can't yet parse
 # for a more extensive coverage use the urlfilter-suffix plugin
--(?i)\.(?:gif|jpg|png|ico|css|sit|eps|wmf|zip|ppt|mpg|xls|gz|rpm|tgz|mov|exe|jpeg|bmp|js)$
+-(?i)\.(?:gif|jpg|png|ico|css|sit|eps|wmf|zip|ppt|mpg|xls|gz|rpm|tgz|mov|exe|jpeg|bmp|js|svg|mp3)$
 
 # skip URLs containing certain characters as probable queries, etc.
 -[?*!@=]
@@ -50,15 +50,15 @@
 #     http://localhost:8080
 #     http://127.0.0.1/ .. http://127.255.255.255/
 #     http://[::1]/
-#-^https?://(?:localhost|127(?:\.(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))){3}|\[::1\])(?::\d+)?(?:/|$)
+-^https?://(?:localhost|127(?:\.(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))){3}|\[::1\])(?::\d+)?(?:/|$)
 #
 # - exclude private IP address spaces
 #     10.0.0.0/8
-#-^https?://(?:10(?:\.(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))){3})(?::\d+)?(?:/|$)
+-^https?://(?:10(?:\.(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))){3})(?::\d+)?(?:/|$)
 #     192.168.0.0/16
-#-^https?://(?:192\.168(?:\.(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))){2})(?::\d+)?(?:/|$)
+-^https?://(?:192\.168(?:\.(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))){2})(?::\d+)?(?:/|$)
 #     172.16.0.0/12
-#-^https?://(?:172\.(?:1[6789]|2[0-9]|3[01])(?:\.(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))){2})(?::\d+)?(?:/|$)
+-^https?://(?:172\.(?:1[6789]|2[0-9]|3[01])(?:\.(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))){2})(?::\d+)?(?:/|$)
 
 # accept anything else
 +.

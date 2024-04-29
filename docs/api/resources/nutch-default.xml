@@ -695,7 +695,7 @@
 
 <property>
   <name>db.ignore.external.links</name>
-  <value>false</value>
+  <value>true</value>
   <description>If true, outlinks leading from a page to external hosts or domain
   will be ignored. This is an effective way to limit the crawl to include
   only initially injected hosts or domains, without creating complex URLFilters.
@@ -995,7 +995,7 @@
 
 <property>
   <name>fetcher.server.delay</name>
-  <value>5.0</value>
+  <value>1.0</value>
   <description>The number of seconds the fetcher will delay between 
    successive requests to the same server. Note that this might get
    overridden by a Crawl-Delay from a robots.txt and is used ONLY if 
@@ -1038,7 +1038,7 @@
 
 <property>
   <name>fetcher.threads.fetch</name>
-  <value>10</value>
+  <value>20</value>
   <description>The number of FetcherThreads the fetcher should use.
   This is also determines the maximum number of requests that are
   made at once (each FetcherThread handles one connection). The total
@@ -1195,7 +1195,7 @@
 
 <property>
   <name>fetcher.follow.outlinks.depth</name>
-  <value>-1</value>
+  <value>1</value>
   <description>(EXPERT)When fetcher.parse is true and this value is greater than 0 the fetcher will extract outlinks
   and follow until the desired depth is reached. A value of 1 means all generated pages are fetched and their first degree
   outlinks are fetched and parsed too. Be careful, this feature is in itself agnostic of the state of the CrawlDB and does not
